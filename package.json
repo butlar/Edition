@@ -1,7 +1,7 @@
 {
 	"name": "kbiz-custom-theme-2",
 	"description": "A clean, minimal newsletter theme for the Ghost publishing platform",
-	"version": "2.0.1",
+	"version": "2.1.1",
 	"private": true,
 	"engines": {
 		"ghost": ">=5.0.0"
@@ -85,12 +85,16 @@
 				"default": "Fullscreen",
 				"group": "homepage"
 			},
+			"podcasts_title": {
+				"type": "text",
+				"default": "Podcasts",
+				"group": "homepage"
+			},
 			"feed_title": {
 				"type": "text",
 				"default": "Latest",
 				"group": "homepage"
 			},
-
 			"show_featured_posts": {
 				"type": "boolean",
 				"default": true,
