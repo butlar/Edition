@@ -31,7 +31,7 @@
     padding: 0 ;
     }
 </style>
- <main class="site-main">
+<main class="site-main">
 
     <header class="feed-header gh-canvas">
         {{#if @custom.feed_title}}
@@ -44,20 +44,20 @@
             </span>
         {{/if}}
     </header>
-        {{#get "posts" limit="4" filter="tag:video"  order="published_at desc" include ="tags" as |related|}}
+    {{#get "posts" limit="4" filter="tag:video"  order="published_at desc" include ="tags" as |related|}}
 
-        {{#if related}}
-        <section class="related-wrapper gh-canvas">
+    {{#if related}}
+    <section class="related-wrapper gh-canvas">
 
-            <div class="post-feed expanded related-feed">
-                {{#foreach posts}}
-                {{> "loop"}}
-                {{/foreach}}
-            </div>
-        </section>
-        {{/if}}
-        {{pagination}}
-        {{/get}}
+        <div class="post-feed expanded related-feed">
+            {{#foreach posts}}
+            {{> "loop"}}
+            {{/foreach}}
+        </div>
+    </section>
+    {{/if}}
+    {{pagination}}
+    {{/get}}
 
 
 

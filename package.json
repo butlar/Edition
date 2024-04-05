@@ -1,7 +1,7 @@
 {
 	"name": "kbiz-custom-theme-2",
 	"description": "A clean, minimal newsletter theme for the Ghost publishing platform",
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"private": true,
 	"engines": {
 		"ghost": ">=5.0.0"
