@@ -1,6 +1,5 @@
 {{!< default}}
 <style>
-
     .feed-header-wrapper {
     align-items: flex-end;
     border-bottom: 0px solid var(--light-gray-color) !important;
@@ -32,7 +31,6 @@
     }
 </style>
 <main class="site-main">
-
     <header class="feed-header gh-canvas">
         {{#if @custom.feed_title}}
             <div class="feed-header-wrapper">
@@ -45,10 +43,8 @@
         {{/if}}
     </header>
     {{#get "posts" limit="4" filter="tag:video"  order="published_at desc" include ="tags" as |related|}}
-
     {{#if related}}
     <section class="related-wrapper gh-canvas">
-
         <div class="post-feed expanded related-feed">
             {{#foreach posts}}
             {{> "loop"}}
@@ -58,8 +54,5 @@
     {{/if}}
     {{pagination}}
     {{/get}}
-
-
-
 </main>
 

@@ -1,47 +1,67 @@
-{{!< default}}
-<style>
+{{!< default}} <style>
     .podcast-image {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-        max-height: 200px;
-        background-size: cover;
-        background-position: center;
-        margin: 10px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
     }
-</style>
-<section class="breaking-news pt-5 gh-outer">
-    <div class="container gh-inner">
-        <h2 class="section-title">{{ @custom.podcasts_title }}</h2>
-        <div class="container">
-            {{#get 'tags' filter="visibility:public  " limit="all" order="count.posts desc" as |tags|}}
-            <div class=" row justify-content-center ">
-                {{#foreach tags from="0" }}
-                <div class="col-lg-4 col-md-5 col-sm-12 spectral">
-                    <div class="podcast-item">
-                        <a href="{{url}}" class="podcast-link">
-                            {{#unless feature_image}}
-                            {{!-- Use a default image if no featured image is present --}}
-                            <div class="podcast-image"
-                                style="background-image: url('{{asset 'images/podcast-default.png'}}');">
+    .spectral {
+    width: 250px;
+    }
+    .custom {
+    display: flex;
+    justify-content: center;
+
+    }
+    </style>
+
+    <section class="breaking-news pt-5 gh-outer">
+        <div class="container gh-inner">
+            <h2 class="section-title">{{ @custom.podcasts_title }}</h2>
+            <div class="container">
+                {{#get 'tags' filter="visibility:public " limit="all" order="count.posts desc" as |tags|}}
+                <div class=" row justify-content-center ">
+                    {{#foreach tags from="0" }}
+                    <div class="col-lg-6 col-md-4 col-sm-6 custom">
+                        <div class="spectral">
+                            <div class="podcast-item  justify-content-center ">
+                                <a href="{{url}}" class="podcast-link">
+                                    {{#unless feature_image}}
+                                    <div class="podcast-image"
+                                        style="background-image: url('{{asset 'images/podcast-default.png'}}'); ">
+                                    </div>
+                                    {{else}}
+                                    <div class="podcast-image" style="background-image: url('{{feature_image}}'); ">
+                                    </div>
+                                    {{/unless}}
+                                </a>
                             </div>
-                            {{else}}
-                            {{!-- Use the featured image if available --}}
-                            <div class="podcast-image" style="background-image: url('{{feature_image}}');">
-                            </div>
-                            {{/unless}}
-                        </a>
+                        </div>
                     </div>
+
+
+                    {{!-- <div class="col-lg-6 col-md-4 col-sm-6 ">
+                        <div class="spectral">
+                            <div class="podcast-item ">
+                                <a href="{{url}}" class="podcast-link">
+                                    {{#unless feature_image}}
+                                    <div class="podcast-image"
+                                        style="background-image: url('{{asset 'images/podcast-default.png'}}'); ">
+                                    </div>
+                                    {{else}}
+                                    <div class="podcast-image" style="background-image: url('{{feature_image}}'); ">
+                                    </div>
+                                    {{/unless}}
+                                </a>
+                            </div>
+                        </div>
+                    </div> --}}
+                    {{/foreach}}
                 </div>
-                {{/foreach}}
-
-
+                {{/get}}
             </div>
-            {{/get}}
-
-
-
         </div>
-
-    </div>
-</section>
+    </section>
