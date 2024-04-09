@@ -12,7 +12,7 @@
 
         {{!-- {{#match @custom.feed_layout "!=" "Text-only"}}
         {{#match @custom.feed_layout "!=" "Minimal"}} --}}
-        <div class="feed-image u-placeholder rectangle">
+        <div class="feed-image fm u-placeholder rectangle">
             {{#if feature_image}}
             <img class="u-object-fit" srcset="{{img_url feature_image size=" s"}} 400w, {{img_url feature_image size="m"
                 }} 750w, {{img_url feature_image size="l" }} 960w, {{img_url feature_image size="xl" }} 1140w"
@@ -55,7 +55,7 @@
                     <h2>{{name}}</h2>
                     {{/if}}
                     {{#if description}}
-                    <p class="tag-description">{{description}}</p>
+                    <p class="tag-description feed-excerpt ">{{description}}</p>
                     {{/if}}
                 </div>
             </div>
