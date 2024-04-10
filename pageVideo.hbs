@@ -1,5 +1,5 @@
-{{!< default}}
-<style>
+{{!< default}} <style>
+
     .feed-header-wrapper {
     align-items: flex-end;
     border-bottom: 0px solid var(--light-gray-color) !important;
@@ -29,10 +29,11 @@
     margin-top: 80px;
     padding: 0 ;
     }
-</style>
-<main class="site-main">
-    <header class="feed-header gh-canvas">
-        {{#if @custom.feed_title}}
+    </style>
+    <main class="site-main">
+
+        <header class="feed-header gh-canvas">
+            {{#if @custom.feed_title}}
             <div class="feed-header-wrapper">
                 <h2 class="feed-header-title">{{@custom.feed_title}}</h2>
             </div>
@@ -40,19 +41,24 @@
                 <span class="line_inr line_inr_one"></span>
                 <span class="line_inr"></span>
             </span>
-        {{/if}}
-    </header>
-    {{#get "posts" limit="4" filter="tag:video"  order="published_at desc" include ="tags" as |related|}}
-    {{#if related}}
-    <section class="related-wrapper gh-canvas">
-        <div class="post-feed expanded related-feed">
-            {{#foreach posts}}
-            {{> "loop"}}
-            {{/foreach}}
-        </div>
-    </section>
-    {{/if}}
-    {{pagination}}
-    {{/get}}
-</main>
+            {{/if}}
+        </header>
+        {{!-- filter="tag:videos" --}}
+        {{!-- {{#get "posts" filter="tag:videos" order="published_at desc" include ="tags" as |posts |}} --}}
 
+        {{#if 'posts'}}
+        <section class="related-wrapper gh-canvas">
+
+            <div class="post-feed expanded related-feed">
+                {{#foreach posts}}
+                {{> "loop"}}
+                {{/foreach}}
+            </div>
+        </section>
+        {{/if}}
+        {{pagination}}
+        {{!-- {{/get}} --}}
+
+
+
+    </main>

@@ -1,5 +1,7 @@
 {{!< default}} <style>
-
+    .featured-wrapper {
+    margin-top: 0rem !important;
+    }
     .feed-header-wrapper {
     align-items: flex-end;
     border-bottom: 0px solid var(--light-gray-color) !important;
@@ -27,7 +29,6 @@
     }
     .tag-description{
     color: white;
-
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -50,6 +51,8 @@
     width: 100%;
     border-radius: 8px;
     }
+
+
     </style>
 
     {{#if @custom.show_featured_posts}}
@@ -59,8 +62,8 @@
     <header class="feed-header gh-canvas">
         {{#if @custom.branded_feed_title}}
         <div class="feed-header-wrapper">
-
-            <h2 class="feed-header-title">{{@custom.branded_feed_title}}</h2>
+            {{!-- <h2 class="feed-header-title">{{@custom.homepage_feed_title}}</h2> --}}
+            <h2 class="feed-header-title">{{@custom.branded_feed_title}} </h2>
 
 
         </div>
@@ -72,14 +75,38 @@
     </header>
 
     <div class="post-feed  expanded gh-feed gh-canvas">
+        {{!-- {{#get 'tags' filter="visibility:public" limit="all" order="count.posts desc" as |posts|}}
+        {{#foreach posts}}
+        {{> "loop"}}
+        {{/foreach}}
+        {{/get}} --}}
 
+        {{!-- {{#get 'posts' order="published_at desc" as |posts|}} --}}
 
-        {{#get 'tags' filter="visibility:public" limit="all" order="published_at desc" as |related|}}
-        {{#if 'related'}}
-        {{#foreach tags}}
+        {{#if 'posts'}}
+        {{#foreach posts}}
         {{> "tag-loop"}}
-
         {{/foreach}}
         {{/if}}
-        {{/get}}
+        {{pagination}}
+
+        {{!-- {{/get}} --}}
+
+        {{!-- --}}
+
+        {{!-- {{#get "posts" limit="all" filter="visibility:public" order="published_at desc" include ="tags" as
+        |related|}}
+
+        {{#if related}}
+        <section class="related-wrapper gh-canvas">
+
+            <div class="post-feed expanded related-feed">
+                {{#foreach posts}}
+                {{> "loop"}}
+                {{/foreach}}
+            </div>
+        </section>
+        {{/if}}
+        {{pagination}}
+        {{/get}} --}}
     </div>
