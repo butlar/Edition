@@ -242,7 +242,7 @@
                             <header class="bnr_blw_sec">
                                 <h1 class="single-title">{{name}} </h1>
                                 {{#if description}}
-                                <div class="single-excerpt">{{description}} </div>
+                                <div class="single-excerpt">{{description}} tag.hbs</div>
                                 {{/if}}
                                 <!-- Add any additional information you want to display about the tag -->
 
@@ -254,9 +254,13 @@
                                         <div class="share-button" data-url="{{url}}" data-title="{{title}}"
                                             onclick="shareOnSpotify(this)">
 
-                                            <img src="https://w7.pngwing.com/pngs/25/70/png-transparent-spotify-logo-streaming-media-music-spotify-logo-text-business-symbol-thumbnail.png"
+                                            {{!-- <img
+                                                src="https://w7.pngwing.com/pngs/25/70/png-transparent-spotify-logo-streaming-media-music-spotify-logo-text-business-symbol-thumbnail.png"
                                                 alt="Spotify Logo" class="mr-2" height="20" style="width: 24px;
-                                            ">
+                                            "> --}}
+                                            <img src="{{asset "images/1.png"}}" alt="Spotify Logo" class="mr-2"
+                                                height="20" style="width: 24px;
+                                                                                        ">
                                             Spotify
                                         </div>
                                     </div>
@@ -264,8 +268,12 @@
                                         <!-- Apple Podcast Sharing Button -->
                                         <div class="share-button" data-url="{{url}}" data-title="{{title}}"
                                             onclick="shareOnApplePodcast(this)">
-                                            <img src="https://w7.pngwing.com/pngs/491/876/png-transparent-podcast-itunes-app-store-apple-purple-violet-magenta-thumbnail.png"
+                                            {{!-- <img
+                                                src="https://w7.pngwing.com/pngs/491/876/png-transparent-podcast-itunes-app-store-apple-purple-violet-magenta-thumbnail.png"
                                                 alt="apple-podcast Logo" class="mr-2" height="20" style="width: 24px;
+                                                "> --}}
+                                            <img src="{{asset "images/2.png"}}" alt="apple-podcast Logo" class="mr-2"
+                                                height="20" style="width: 24px;
                                                 ">
                                             Apple Podcast
                                         </div>
@@ -274,9 +282,13 @@
                                         <!-- Pandora Sharing Button -->
                                         <div class="share-button" data-url="{{url}}" data-title="{{title}}"
                                             onclick="shareOnPandora(this)">
-                                            <img src="https://w7.pngwing.com/pngs/228/963/png-transparent-pandora-logo-music-genome-project-internet-radio-pandora-miscellaneous-blue-music-download-thumbnail.png"
+                                            {{!-- <img
+                                                src="https://w7.pngwing.com/pngs/228/963/png-transparent-pandora-logo-music-genome-project-internet-radio-pandora-miscellaneous-blue-music-download-thumbnail.png"
                                                 alt="Pandora Logo" class="mr-2" height="20" style="width: 24px;
-                                                ">
+                                                "> --}}
+                                            <img src="{{asset "images/3.png"}}" alt="Pandora Logo" class="mr-2"
+                                                height="20" style="width: 24px;
+                                                                                            ">
                                             Pandora
                                         </div>
                                     </div>
@@ -284,8 +296,12 @@
                                         <!-- Amazon Music Sharing Button -->
                                         <div class="share-button" data-url="{{url}}" data-title="{{title}}"
                                             onclick="shareOnAmazonMusic(this)">
-                                            <img src="https://w7.pngwing.com/pngs/850/509/png-transparent-amazon-music-app-logo-tech-companies-thumbnail.png"
+                                            {{!-- <img
+                                                src="https://w7.pngwing.com/pngs/850/509/png-transparent-amazon-music-app-logo-tech-companies-thumbnail.png"
                                                 alt="Amazon Music Logo" class="mr-2" height="20" style="width: 24px;
+                                                "> --}}
+                                            <img src="{{asset "images/4.png"}}" alt="Amazon Music Logo" class="mr-2"
+                                                height="20" style="width: 24px;
                                                 ">
                                             Amazon Music
                                         </div>
